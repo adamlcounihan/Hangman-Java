@@ -58,7 +58,8 @@ public class Game {
      * The currentGuess is initialized with underscores to represent each letter in the chosen word.
      */
     private void chooseWord() {
-        this.secretWord = "test";
+        WordList wordList = new WordList("words.csv");
+        this.secretWord = wordList.getRandomWord();
         this.currentGuess = new StringBuilder("_".repeat(secretWord.length()));
     }
 

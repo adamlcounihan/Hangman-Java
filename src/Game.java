@@ -8,6 +8,18 @@ import java.util.Set;
 public class Game {
     private String secretWord;
 
+    private StringBuilder currentGuess;
+    private int maxAttempts;
+    private int wrongAttempts;
+    private Set<Character> guessedLetters;
+
+    public Game(int maxAttempts) {
+        this.maxAttempts = maxAttempts;
+        this.wrongAttempts = 0;
+        this.guessedLetters = new HashSet<>();
+        chooseWord();
+    }
+
     /**
      * Returns Secret Word.
      * @return secretWord.
@@ -38,18 +50,6 @@ public class Game {
      */
     public int getWrongAttempts() {
         return wrongAttempts;
-    }
-
-    private StringBuilder currentGuess;
-    private int maxAttempts;
-    private int wrongAttempts;
-    private Set<Character> guessedLetters;
-
-    public Game(int maxAttempts) {
-        this.maxAttempts = maxAttempts;
-        this.wrongAttempts = 0;
-        this.guessedLetters = new HashSet<>();
-        chooseWord();
     }
 
     /**

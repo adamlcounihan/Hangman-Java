@@ -86,6 +86,8 @@ public class Game {
 
         if(!isCorrect) {
             wrongAttempts++;
+            Display display = new Display();
+            display.printHangman(wrongAttempts);
         }
 
         return isCorrect;

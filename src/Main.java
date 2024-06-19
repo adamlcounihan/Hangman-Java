@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Guessing Game!");
-        Game game = new Game(5);
+        Game game = new Game(6);
 
         while (!game.isGameWon() && !game.isGameLost()) {
-            System.out.println("Current guess: " + game.getCurrentGuess());
+            System.out.println("\n\nCurrent guess: " + game.getCurrentGuess());
             System.out.print("Enter a letter to guess: ");
             char guess = scanner.nextLine().charAt(0);
 

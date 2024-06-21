@@ -11,11 +11,7 @@ public class Main {
             System.out.print("Enter a letter to guess: ");
             char guess = scanner.nextLine().charAt(0);
 
-            if (game.makeGuess(guess)) {
-                System.out.println("Correct guess!");
-            } else {
-                System.out.println("Incorrect guess.");
-            }
+            game.makeGuess(guess);
 
             System.out.println("You have " + (game.getMaxAttempts() - game.getWrongAttempts()) + " attempts left.");
         }

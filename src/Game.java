@@ -72,19 +72,22 @@ public class Game {
      */
     public boolean makeGuess(char guess) {
         if(guessedLetters.contains(guess)) {
-            return false; // The letter has already been guessed
+            System.out.println("You already guessed that letter.");
+            return false;
         }
         guessedLetters.add(guess);
 
         boolean isCorrect = false;
         for(int i = 0; i < secretWord.length(); i++) {
             if(secretWord.charAt(i) == guess) {
+                System.out.println("Correct guess!");
                 currentGuess.setCharAt(i, guess);
                 isCorrect = true;
             }
         }
 
         if(!isCorrect) {
+            System.out.println("Incorrect guess.");
             wrongAttempts++;
             Display display = new Display();
             display.printHangman(wrongAttempts);
